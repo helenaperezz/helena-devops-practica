@@ -118,20 +118,19 @@ Pasos de prueba (con el contenedor en marcha):
 | POST | `/pedidos` | Crear pedido |
 
 ### 6. Publicar y descargar la imagen (registry)
-
-Sustituye `TU_USUARIO` por tu usuario de Docker Hub:
+La imagen está publicada en https://hub.docker.com/r/helenaperezz/tienda-online. 
 
 ```bash
 docker login
-docker tag tienda-online:1.0 TU_USUARIO/tienda-online:1.0
-docker push TU_USUARIO/tienda-online:1.0
+docker tag tienda-online:1.0 helenaperezz/tienda-online:1.0
+docker push helenaperezz/tienda-online:1.0
 ```
 
 Para descargarla y ejecutarla desde cualquier equipo:
 
 ```bash
-docker pull TU_USUARIO/tienda-online:1.0
-docker run --rm -p 8000:8000 TU_USUARIO/tienda-online:1.0
+docker pull helenaperezz/tienda-online:1.0
+docker run --rm -p 8000:8000 helenaperezz/tienda-online:1.0
 ```
 
 ## Flujo de trabajo con Git
