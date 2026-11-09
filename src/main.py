@@ -156,3 +156,12 @@ def listar_pedidos_cliente(cliente_id: str):  # el id del cliente llega en la UR
     return [pedido_a_read(pedido) for pedido in tienda.listar_pedidos_usuarios(cliente_id)]  # convertimos cada pedido (lista vacía si no tiene)
 
 
+
+
+# Permite ejecutar la aplicación con "python main.py" (el puerto se puede cambiar con la variable de entorno PORT)
+if __name__ == "__main__":
+    import os
+
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=int(os.getenv("PORT", "8000")))
